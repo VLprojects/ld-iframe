@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LiveDigital Iframe Loader</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <style>
       body {
         margin: 0;
@@ -77,23 +78,23 @@
     </div>
 
     <script>
-      const input = document.getElementById('urlInput');
-      const button = document.getElementById('loadBtn');
-      const frame = document.getElementById('embeddedFrame');
+      const input = document.getElementById("urlInput");
+      const button = document.getElementById("loadBtn");
+      const frame = document.getElementById("embeddedFrame");
 
-      button.addEventListener('click', () => {
+      button.addEventListener("click", () => {
         let url = input.value.trim();
 
         if (!url) return;
 
         // Добавим https:// если не указано
         if (!/^https?:\/\//i.test(url)) {
-          url = 'https://' + url;
+          url = "https://" + url;
         }
 
         // Добавим ?iframe=1 или &iframe=1
         if (!/[?&]iframe=1/.test(url)) {
-          url += url.includes('?') ? '&iframe=1' : '?iframe=1';
+          url += url.includes("?") ? "&iframe=1" : "?iframe=1";
         }
 
         frame.src = url;
